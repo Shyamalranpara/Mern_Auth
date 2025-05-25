@@ -1,0 +1,86 @@
+/* Register.css */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(120deg, #f6d46563, #fda085);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.register-box {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+.register-box h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.register-box input {
+  width: 80%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: border 0.3s ease;
+}
+
+.register-box input:focus {
+  outline: none;
+  border-color: #fda085;
+}
+
+.register-box button {
+  width: 100%;
+  padding: 12px;
+  background: #f77f00;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  margin-top: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.register-box button:hover {
+  background: #e76f00;
+}
+
+.register-box p {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.register-box a {
+  color: #f77f00;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
+import './Register.css';
 
 const register = () => {
     const [name,setName]=useState("")
@@ -24,36 +25,36 @@ const handleBtn = async () => {
 }
 
   return (
-      <div>
-       <h1>Register</h1>
+      <div className="register-container">
+      <div className="register-box">
+        <h2>Register</h2>
 
-       <input 
-       type="text" 
-       placeholder='enter the name'
-       onChange={(e)=>setName(e.target.value)}
-       />
+        <input
+          type="text"
+          placeholder="Enter your name"
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Enter your city"
+          onChange={(e) => setCity(e.target.value)}
+        />
+        <input
+          type="email"
+          placeholder="Enter your email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Enter your password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-        <input 
-       type="text"
-       placeholder='enter the city'
-       onChange={(e)=>setCity(e.target.value)}
-       />
-
-       <input 
-       type="text"
-       placeholder='enter the email'
-       onChange={(e)=>setEmail(e.target.value)}
-       />
-
-       <input 
-       type="text"
-       placeholder='enter the password'
-       onChange={(e)=>setPassword(e.target.value)}
-       />
-
-       <button onClick={handleBtn}>Register</button>
-
-        <Link to={'/'}>Login ?</Link>
+        <button onClick={handleBtn}>Register</button>
+        <p>
+          Already have an account? <Link to="/">Login</Link>
+        </p>
+      </div>
     </div>
   )
 }

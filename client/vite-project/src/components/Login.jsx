@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import "./Login.css"; 
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -32,37 +33,40 @@ setTimeout(() => {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <input
-        type="text"
-        placeholder="Enter your Email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Enter your Password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br /><br /><br />
-      <button onClick={handleLogin}>Login</button>
-      <br /><br />
-      <Link to={"/register"}>Register ?</Link>
-      
-      <ToastContainer 
-  position="top-right"
-  autoClose={3000}
-  hideProgressBar={false}
-  newestOnTop={false}
-  closeOnClick
-  pauseOnFocusLoss
-  draggable
-  pauseOnHover
-  theme="colored"
-/>
+      <div className="login-container">
+      <div className="login-box">
+        <h2>Login</h2>
 
+        <input
+          type="email"
+          placeholder="Enter your Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
+        <input
+          type="password"
+          placeholder="Enter your Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
+        <button onClick={handleLogin}>Login</button>
+
+        <p>
+          Don't have an account? <Link to="/register">Register</Link>
+        </p>
+
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark" 
+        />
+      </div>
     </div>
   );
 }
